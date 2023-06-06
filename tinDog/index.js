@@ -4,6 +4,12 @@ import dogs from '/data.js';
 
 let currentDogIndex = 0;
 let likedDogs = [];
+const endAppBtn = document.getElementById('return-btn')
+endApp.addEventListener('click', function(e){
+    if(e.avatar.id === 'return-btn'){
+        endApp()
+    }
+})
 
 let currentDog = new Dog(dogs[currentDogIndex]);
 
@@ -54,7 +60,10 @@ function render(){
     } else {
         document.getElementById('card').innerHTML = currentDog.getDogHtml();
     }
-    console.log(likeDogsAvatar)
 };
+
+const endApp = () => {
+    location.reload()
+}
 
 render();
